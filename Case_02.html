@@ -89,6 +89,17 @@ hr {
     
 
     <script>
-        
+        let boxes = ["pink", "pink-light","red", "green","blue","yellow"];
+
+    setInterval(() => {
+        let last_Box = boxes.pop();
+        boxes.unshift(last_Box);
+
+        let boxEliments = document.querySelectorAll(".box");
+
+        for(let i = 0; i < boxEliments.length; i++) {
+            boxEliments[i].className = `box ${boxes[i]}`;
+        }
+    }, 3000);
     </script>
 </body>
